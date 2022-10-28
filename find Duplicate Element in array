@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int findDup(vector<int>& a) {
+    unordered_map<int ,int > m;
+    int n = a.size();
+    for(int i=0;i<n;i++)
+    {
+        m[a[i]]++;
+    }
+    int x;
+    // Hashing Using 
+    unordered_map<int ,int >:: iterator it;
+    for(it = m.begin();it!=m.end();it++){
+        if(it->second != 1){
+        x = it->first;
+        }
+    }
+    return x;
+}
+
+// Main Function 
+int main()
+{
+    int n,k; 
+    cin>>n;
+    int a[n];
+    vector<int> v;
+    for(int i=0;i<n;i++){
+        // cin>>a[i];
+        int x;
+        cin>>x;
+        v.push_back(x);
+    }
+    cout<<findDup(v)<<endl;
+
+    return 0;   
+}
