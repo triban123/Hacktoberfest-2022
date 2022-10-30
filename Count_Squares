@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+    int countSquares(int N) {
+        int numberOfSquares = 0;
+        for(int i=1;i<N/2;i++){
+            if(i*i < N){
+                numberOfSquares+=1;
+            }
+            if(i*i > N){
+                break;
+            }
+        }
+        return numberOfSquares;
+    }
+};
+
+int main() {
+    int testcase;
+    cin >> testcase;
+    while (testcase--) {
+        int Number;
+        
+        cin>>Number;
+
+        Solution ob;
+        cout << ob.countSquares(Number) << endl;
+    }
+    return 0;
+}
